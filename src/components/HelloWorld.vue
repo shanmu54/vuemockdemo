@@ -31,10 +31,18 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  created() {
+    console.log(1111)
+    axios.get('/mock/api/news').then(res => { // url即在mock.js中定义的
+      console.log(res.data) // 打印一下响应数据
+    })
+    // axios.get('/user/login')
   }
 }
 </script>
